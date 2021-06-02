@@ -1,1 +1,7 @@
-
+# TIL 
+### 31/05
+Today was the very first of our lections. I was listening for the tutors who told about the different software development methodologies. As a hometask i was intended to create the repo in git and supplied it with specific dirs and files.
+### 01/06
+I've spent all of my day considering the ways ot resolve the problem with LV as a swap partition in Linux. When I came to a logical i had edited the fstab file and all of my system crashed with kernel panic and other scarry words. Thanks god i made a snapshot before that.
+### 02/06 
+Today I'am going to become familiar with CLI version of Git for linux
