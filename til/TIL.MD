@@ -4,4 +4,4 @@ Today was the very first of our lections. I was listening for the tutors who tol
 ### 01/06
 I've spent all of my day considering the ways ot resolve the problem with LV as a swap partition in Linux. When I came to a logical i had edited the fstab file and all of my system crashed with kernel panic and other scarry words. Thanks god i made a snapshot before that.
 ### 02/06 
-Today I'am going to become familiar with CLI version of Git for linux
+Today I'am going to become familiar with CLI version of Git for linux.As a result of the day I've learned the basic commands(push,add,clone,commit and etc.) and set up the SSH autentification to my repo.
