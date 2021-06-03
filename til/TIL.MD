@@ -5,3 +5,5 @@ Today was the very first of our lections. I was listening for the tutors who tol
 I've spent all of my day considering the ways ot resolve the problem with LV as a swap partition in Linux. When I came to a logical end  i had edited the fstab file and all of my system crashed with kernel panic and other scarry words. Thanks god i made a snapshot before that.
 ### 02/06 
 Today I'am going to become familiar with CLI version of Git for linux.As a result of the day I've learned the basic commands(push,add,clone,commit and etc.) and set up the SSH autentification to my repo.
+### 03/06
+To my surpise it took a lot of time to get some skills with Git. Tommorow I'am planning to install Ubuntu with flask and make my objectives clear
