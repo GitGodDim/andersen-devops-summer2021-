@@ -7,3 +7,11 @@ I've spent all of my day considering the ways ot resolve the problem with LV as 
 Today I'am going to become familiar with CLI version of Git for linux.As a result of the day I've learned the basic commands(push,add,clone,commit and etc.) and set up the SSH autentification to my repo.
 ### 03/06
 To my surpise it took a lot of time to get some skills with Git. Tommorow I'am planning to install Ubuntu with flask and make my objectives clear
+### 04/06
+I've spent all day trying to install and adapt ubuntu for me
+### 05/06
+Days off came and a i have a lot of work to do with my country house
+### 07/06
+I've learned the very basics of configuration tools and renew my information about these technologies.After that I've starterd to do bash home task
+### 08/06
+Now I don't have an idea why regex in awk take so much time.It seems nearly impossible to look up the truth why it's not working as intended,but I'am still trying
