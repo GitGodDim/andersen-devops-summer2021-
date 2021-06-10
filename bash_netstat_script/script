@@ -1,0 +1,75 @@
+#!/usr/bin/bash
+read -p "Enter the PID/Process Name: " pat
+###this makes a choice to user to get info abouth the other connections
+	read -ep "What types of connections would you like to see?`echo $'\n> '` l - for LISTENING , e - for ESTABLISHED , (all-default,any other letter or ENTER) " type
+case $type in
+l)
+	echo -e "You'd choosed the LISTENING STATE"
+	type="LISTENING"
+;;
+e)
+	echo -e "You'd choosed the ESTABLISHED STATE"
+	type="ESTABLISHED"
+;;
+*)
+	echo -e "You'd choosed to type everything"
+;;
+esac 
+### Warning about the not complished stat with default user priv.
+read -p "To see all the connections you must login as root. Do you need such an option? (y/n?) default -n" usrtype
+if [[  -z $usrtype  ]]
+ then usrtype="n"
+else
+until [[ $usrtype = 'y' || $usrtype = 'n'  ]]
+do
+echo "enter y or n as parameter"
+read usrtype
+done
+fi
+echo "USERTYPE IS $usrtype" 
+###Number of lines in output
+read -p "How many lines would you like to see as output/press Enter to default all-print " linen
+until [[ $linen =~ [0-9]+$ || -z $linen ]]
+do
+	echo "ONLY DIGITS ARE PERMITTED AS A LINE NUMBER! Enter the int number"
+	read linen
+done
+### Save the ip adresses in variable for the next manipulations
+###____________________________________________________________________ 
+main(){
+if [[ $usrtype = 'y' ]]
+then
+echo "Enter the sudo credentials"
+sudo
+fi
+case $type in
+'LISTENING')
+general_out=$(netstat -tunapln | awk -v pat=$pat '$0 ~ pat && $0 ~ /LISTENING/ {print $5 " " $6 " " $7}' | sed -e 's/:[0-9]*\b/ /' | sort -k1 | uniq -c)
+;;
+'ESTABLISHED')
+general_out=$(netstat -tunapln | awk -v pat=$pat '$0 ~ pat && $0 ~ /ESTABLISHED/ {print $5 " " $6 " " $7}' | sed -e 's/:[0-9]*\b/ /' | sort -k1 | uniq -c)
+;;
+*)
+general_out=$(netstat -tunapln | awk -v pat=$pat '$0 ~ pat {print $5 " " $6 " " $7}' | sed -e 's/:[0-9]*\b/ /' | sort -k1 | uniq -c) ###General output of netstat example: 1 8.8.8.8 ESTABLISHED 13769/firefox
+;;
+esac
+ echo "$general_out" #FOR THE TEST PURPOSES
+i=0
+if [[ -z $linen  ]]
+then
+while  read IP  
+do
+echo "$(whois $(echo "$IP"|awk '{print $2}'))"| awk -F':'  '/^Organization/ {printf $2}'; ### output of the whois
+echo "$IP"|awk -e '{print "Connection Counts :" $1 " IP:" $2 " State:" $3 " PID/NAME:" $4 "\n"}' ### the rest of output
+done <<< "$general_out" ###here string as input
+else
+while  read IP && [[ $linen -ge $i ]]
+((i++))
+do
+echo "$(whois $(echo "$IP"|awk '{print $2}'))"| awk -F':'  '/^Organization/ {printf $2}'; ### output of the whois
+echo "$IP"|awk -e '{print "Connection Counts :" $1 " IP:" $2 " State:" $3 " PID/NAME:" $4 "\n"}' ### the rest of output
+done <<< "$general_out" ###here string as input
+
+fi
+}
+main
