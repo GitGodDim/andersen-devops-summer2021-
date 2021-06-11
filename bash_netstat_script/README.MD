@@ -1,8 +1,9 @@
 ### IP information script
-The script is intended to get information about the IP addresses that processes established connection with.You can receive additional information as an option( you will be prompted to it during the script execution)
-execution example:You can enter the "ENTER" key to get the default value
+The script is intended to get information(Organization) about the IP addresses that processes established connection with.You can receive additional information as an option( you will be prompted to it during the script execution)
+Execution Example:
+'You can enter the "ENTER" key to get the default value'
 ```
-Enter the PID/Process Name: firefox \n
+Enter the PID/Process Name: firefox 
 What types of connections would you like to see?
 >  l - for LISTENING , e - for ESTABLISHED , (all-default,any other letter or ENTER) 
 You'd choosed to type everything
