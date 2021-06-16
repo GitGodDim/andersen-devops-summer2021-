@@ -21,3 +21,11 @@ It took a lot of time to understand the task of bash script.Starting to make som
 here strings, sed and awk tools are learned by me for that moment. Especially interested moment is when you feed the input of here string to while loop, It's very interesting if think about that conceptually.
 ### 11/06
 Fixing minor bugs in bash script ,learning the notes from the 3rd lection and also starting the server task among my plans for today
+### 12/06
+I've spent all the day learning the basics of GOlang syntax.Also i saw the things about the broken chmod of chmod case(where the utility chmod accidentally or forcibly get -x flag).
+### 14/06
+Learning the things about the strace utility and pipefail things
+### 15/06
+Continue my labour on Telegram Bot on GOlang.I decided to copy the existed project from github or stackoverflow and implement the features from the task
+### 16/06
+My bot started and i' received the first msg from it, continue to do the things with it
